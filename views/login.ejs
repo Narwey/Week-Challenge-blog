@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>User Login</title>
+</head>
+<body>
+  <h1>User Login</h1>
+  
+  <% if (locals.error) { %>
+    <p><strong>Error:</strong> <%= locals.error %></p>
+  <% } %>
+
+  <form method="get" action="/blogs">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    
+    <button type="submit">Login</button>
+  </form>
+
+  <p>Don't have an account? <a href="/register">Register here</a></p>
+</body>
+</html>

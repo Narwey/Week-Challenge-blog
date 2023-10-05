@@ -1,0 +1,29 @@
+<head>
+  <meta charset="utf-8">
+  <title>Blog Posts</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <h1>Blog Posts</h1>
+    <ul>
+        <% blogPosts.forEach((post) => { %>
+          <li>
+            <h2><%= post.title %></h2>
+            <img src="<%= post.image %>" alt="<%= post.title %> Image" class="blog-image">
+            <p><strong>Author:</strong> <%= post.author %></p>
+            <p><strong>Release Year:</strong> <%= post.releaseYear %></p>
+            <p><%= post.content %></p>
+
+            <!-- Edit button -->
+            <form method="GET" action="/<%= post.id %>/edit" class="button-form">
+              <button type="submit" class="edit-button">Edit</button>
+            </form>
+            
+            <form method="POST" action="<%= post.id %>/delete" class="button-form">
+              <button type="submit" class="delete-button">Delete</button>
+            </form>            
+          </li>
+        <% }); %>
+    </ul>      
+</body>
+</html>
